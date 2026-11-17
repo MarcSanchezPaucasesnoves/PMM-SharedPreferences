@@ -16,16 +16,25 @@ class Preferences {
   }
 
   static set nom(String value) {
-    _nom = nom;
+    _nom = value;
     _prefs.setString("nom", value);
   }
 
-  static String get isDarkMode {
-    return _prefs.getBool("isDarkMode") ?? _isDarkMode;
+  static bool get isDarkMode {
+    return _prefs.getBool("darkMode") ?? _isDarkMode;
   }
 
-  static set isDarkMode(String value) {
-    _isDarkMode = isDarkMode;
-    _prefs.setString("isDarkMode", value);
+  static set isDarkMode(bool value) {
+    _isDarkMode = value;
+    _prefs.setBool("darkMode", value);
+  }
+
+  static int get genere {
+    return _prefs.getInt("genere") ?? _genere;
+  }
+
+  static set genere(int value) {
+    _genere = value;
+    _prefs.setInt("genere", value);
   }
 }
